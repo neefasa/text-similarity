@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Text Similarity</title>
+    <style>
+      body{
+        font-family: sans-serif;
+      }
+      .button {
+        background-color: LightBlue;
+        color: Black;
+        padding: 10px 10px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        margin: 4px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Enter two text samples and I'll tell you how similar they are.</h2>
+    <form action="/text_compare/" method="post">
+
+      <label for="text1">First text sample:</label><br>
+      <textarea class="textarea" id="text1" name="text1" rows="8" cols="80"></textarea>
+
+      <br><br>
+
+      <label for="text2">Second text sample:</label><br>
+      <textarea name="text2" rows="8" cols="80"></textarea>
+
+      <br><br>
+
+      <button type="submit" name="button" class="button">Compare</button>
+
+    </form>
+
+    <br>
+    {% if score %}
+    <h2>The two text samples have a similarity score of {{score}}</h2>
+    <body>
+      Scores are between 0 and 1. The closer to 1 the more similar the samples are.
+    </body>
+    {% endif %}
+
+  </body>
+</html>
