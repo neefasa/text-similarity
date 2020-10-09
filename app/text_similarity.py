@@ -60,10 +60,13 @@ def measure_similarity_multiple(samples):
     '''
     Given a dictionary of samples. The text similarity is measured and printed for each combination.
     '''
+    results = dict()
+    
     for (name1,text1),(name2,text2) in combinations(samples.items(), 2):
         similarity_score = measure_similarity(text1, text2)
-        print(f'{name1} and {name2} have a similarity of {similarity_score}')
-        
+        # results.append(f'{name1} and {name2} have a similarity of {similarity_score}')
+        results[f'{name1} and {name2}'] = similarity_score
+    return results
 
 
 
@@ -77,5 +80,7 @@ if __name__ == '__main__':
     with open(sample_file,'r') as f:
         data = f.read()
         samples = json.loads(data)
-        measure_similarity_multiple(samples)
+        results = measure_similarity_multiple(samples)
+        for samples, score in results.items():
+            print(f'{samples} have a similarity of {score}')
     
