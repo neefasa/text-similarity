@@ -20,16 +20,18 @@
     </style>
   </head>
   <body>
-    <h2>Enter two text samples and I'll tell you how similar they are.</h2>
-    <form action="/text_compare/" method="post">
+    <h2>Are you curious about how similar two text samples are?</h2>
+    <form action="/text_compare/" id="textform" method="post">
 
       <label for="text1">First text sample:</label><br>
-      <textarea class="textarea" id="text1" name="text1" rows="8" cols="80"></textarea>
+      <textarea name="text1" form="textform" placeholder="Enter text here..." rows="8" cols="80">
+{% if text1 %}{{text1}}{% endif %}</textarea>
 
       <br><br>
 
       <label for="text2">Second text sample:</label><br>
-      <textarea name="text2" rows="8" cols="80"></textarea>
+      <textarea name="text2" form="textform" placeholder="Enter text here..." rows="8" cols="80">
+{% if text2 %}{{text2}}{% endif %}</textarea>
 
       <br><br>
 
@@ -38,10 +40,12 @@
     </form>
 
     <br>
+    <h2>{% if message %}{{message}}{% endif %}</h2>
+    
     {% if score %}
-    <h2>The two text samples have a similarity score of {{score}}</h2>
+    <h2>The similarity score is {{score}}</h2>
     <body>
-      Scores are between 0 and 1. The closer to 1 the more similar the samples are.
+      Scores range between 0 and 1. Scores closer to 1 are more similar.
     </body>
     {% endif %}
 
