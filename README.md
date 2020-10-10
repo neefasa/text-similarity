@@ -21,12 +21,10 @@ Sample2 and Sample3 have a similarity of 0.58
 ```
 ---
 ## Deployed on Heroku with a simple user interface  
-I deployed the app using Flask, Heroku, and Docker.  
-[text-sim.herokuapp.com](text-sim.herokuapp.com)  
-It has a simple interface, and can also take post requests.
- 
-![text sim app](images/text-sim-app.png)
+I deployed the app using Flask, Heroku, and Docker. It has a simple interface, and can also take post requests.  
+[text-sim.herokuapp.com](https://text-sim.herokuapp.com)  
 
+![text sim app](images/text-sim-app.png)  
 
 ## Access the app using a post request
 
