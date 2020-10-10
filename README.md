@@ -4,7 +4,7 @@ I used [this notebook](testing/test-text-sim.ipynb) to develop an MVP model. I w
 
 ---
 ## Run as a Python Script
-The python script can be ran on the command line. It takes in a json file with the text samples.
+The python script can be run on the command line. It takes in a json file with the text samples.
 
 ```
 $ python text_similarity.py <file.json>
@@ -23,7 +23,7 @@ Sample2 and Sample3 have a similarity of 0.58
 ## Deployed on Heroku with a simple user interface  
 I deployed the app using Flask, Heroku, and Docker.  
 [text-sim.herokuapp.com](text-sim.herokuapp.com)  
-It has a simple interface, and also can take post requests.
+It has a simple interface, and can also take post requests.
  
 ![text sim app](images/text-sim-app.png)
 
