@@ -15,9 +15,9 @@ $ python app/text_similarity.py samples.json
 ```
 The output would be:
 ```
-Sample1 and Sample2 have a similarity of 0.89
-Sample1 and Sample3 have a similarity of 0.56
-Sample2 and Sample3 have a similarity of 0.58
+Sample1 and Sample2 have a similarity of 0.38
+Sample1 and Sample3 have a similarity of 0.58
+Sample2 and Sample3 have a similarity of 0.46
 ```
 ---
 ## Deployed on Heroku with a simple user interface  

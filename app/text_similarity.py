@@ -1,11 +1,14 @@
 import numpy as np
 from itertools import combinations
+from string import punctuation
 import sys 
 import json
 
 def simple_clean(text:str):
-    '''Simple function to remove [,.] and to make all letters lowercase.'''
-    return text.lower().replace(',','').replace('.','')
+    '''Simple function to remove punctuations and to make all letters lowercase.'''
+    for punc in punctuation:
+        text = text.replace(punc, ' ')
+    return text.lower().replace('\n',' ')
 
 def cos_sim(vector1, vector2):
     '''
